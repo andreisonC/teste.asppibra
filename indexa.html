@@ -1,0 +1,239 @@
+<!--End of Title section-->
+<div class="section section-lg pt-0">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+        <div class="card">
+          <div class="card shadow text-center">
+            <!-- Header -->
+            <div class="card-head">
+              <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=024" alt="logo" class="card-logo">
+              <img src="https://raw.githubusercontent.com/ASPPIBRA-DAO/Imagens/main/Agro/gado%20243x150.png" 
+                   class="card-img-top" width="100%">
+              <span class="back-text">
+                BR
+              </span>
+              <!-- End Header -->
+              <!-- Content -->
+            </div>
+            <div class="card-body">
+              <div class="product-desc">
+                <span class="product-title">
+                  <b>Bovino</b>
+                  <span class="badge">
+                    New
+                  </span>
+                </span>
+              </div>
+              <div class="product-properties">
+                <span class="product-size">
+                  <h4>Retorno Financeiro%</h4>
+                  <ul class="ul-size">
+                    <li><a href="#">50</a></li>
+                    <li><a href="#">100</a></li>
+                    <li><a href="#">150</a></li>
+                    <li><a href="#" class="active">200</a></li>
+                  </ul>
+                </div>
+                <div class="card-footer">
+                  <span class="product-price" id="price" onmouseover="updatePrice()">
+                    BTC<b>23,453</b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- JavaScript -->
+<script>
+  // Função para buscar a cotação atual do dólar e atualizar o preço na página
+  function updatePrice() {
+    // Faz uma requisição GET para a API de cotação do dólar
+    fetch('https://economia.awesomeapi.com.br/json/last/BTC-BRL')
+      .then(response => response.json())
+      .then(data => {
+        // Pega o preço atual do dólar e atualiza o texto do preço na página
+        const price = data['BTCBRL']['bid'];
+        document.getElementById('price').innerHTML = `BTC<b>${price}</b>`;
+      })
+      .catch(error => console.error(error));
+  }
+</script>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #353535;
+}
+
+.container {
+  width: 280px;
+  height: 500px;
+  margin: 30px auto;
+}
+
+.card {
+  border-radius: 25px;
+  box-shadow: -11px 11px 1px rgba(0, 0, 0, 0.3);
+}
+
+.card-head {
+  position: relative;
+  height: 252px;
+  background: #fa782e;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #fa782e 8%, #c82930 83%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #fa782e 8%, #c82930 83%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fa782e', endColorstr='#c82930', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  border-radius: 25px 25px 0 0;
+}
+
+.card-logo {
+  width: 30px;
+  margin: 20px;
+}
+
+.product-img {
+  position: absolute;
+  left: 0;
+  margin-top: -16px;
+  margin-left: 50px;
+}
+
+
+.back-text {
+  display: inline-block;
+  font-size: 90px;
+  font-weight: 900;
+  margin-left: 14px;
+  margin-top: 75px;
+  opacity: 0.1;
+}
+
+.card-body {
+  height: 255px;
+  background: #fff;
+  border-radius: 0 0 25px 25px;
+}
+
+.product-title {
+  padding: 20px 20px 5px 20px;
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.product-title b {
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.badge {
+  position: relative;
+  font-size: 12px;
+  font-weight: 90;
+  color: #fff;
+  background: #11e95b;
+  padding: 3px 3px;
+  border-radius: 10px;
+  top: -2px;
+  margin-left: 5px;
+}
+
+.product-caption {
+  display: block;
+  padding: 0 20px;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.product-rating {
+  padding: 0 20px;
+  font-size: 11px;
+}
+
+.product-rating i.grey {
+  color: #acacab;
+}
+
+.product-size h4 {
+  font-size: 11px;
+  padding: 0 21px;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.ul-size {
+  margin-left: 15px;
+}
+
+.ul-size li {
+  list-style: none;
+  float: left;
+  margin-right: 20px;
+}
+
+.ul-size li a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 23px;
+  color: #000;
+}
+
+.ul-size li a.active {
+  background: #f35e3d;
+  color: #fff;
+}
+
+.product-size:before,
+.product-size:after {
+  content: '';
+  display: block;
+  clear: both;
+} 
+
+.product-price {
+  position: absolute;
+  background: #11e95b;
+  padding: 2px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 120;
+  color: #fff;
+  border-radius: 6px;
+  margin-top: 80px;
+  margin-left: 60px;
+  box-shadow: -10px 20px 15px -10px rgba(17, 233, 91, 0.3);
+}
+
+.product-price b {
+  margin-left: 5px;
+}
+
+
+
+
+</style>
